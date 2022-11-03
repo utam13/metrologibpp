@@ -1105,6 +1105,7 @@ class Pelayanan extends CI_Controller {
                 $jml = $this->input->post('jml');
                 $jmlpengajuan = $this->input->post('jmlpengajuan');
                 $foto = $this->input->post('namafile');
+                $info = $this->input->post('info');
 
                 $cekpeserta = $this->mod_pelayanan->cekpeserta($kdpeserta);
                 $namapeserta = empty($cekpeserta) ? "-":$cekpeserta['nama'];
@@ -1123,7 +1124,7 @@ class Pelayanan extends CI_Controller {
                     "merktype" => $merktype,
                     "kapasitas" => $kapasitas,
                     "noseri" => $noseri,
-                    "jml" => $jml,
+                    "jml" => 1,
                     "foto" => $foto,
                     "status" => $status
                 );
@@ -1133,6 +1134,21 @@ class Pelayanan extends CI_Controller {
                 case 1:
                     $this->mod_pelayanan->simpanuttp($data);
 
+                    $this->mod_pelayanan->resetinfotambahan($kduttppeserta);
+                    $uttppeserta = $this->mod_pelayanan->cekuttppeserta($kdpeserta,$kduttp);
+                    $kduttppeserta = empty($uttppeserta) ? '':$uttppeserta['kduttppeserta'];
+
+                    if($kduttppeserta != ''){
+                        $no = 0;
+                        $infotambahan = $this->mod_pelayanan->infotambahan($kduttp)->result();
+                        foreach ($infotambahan as $it) {;
+                            $isi = $info[$no];
+                            $this->mod_pelayanan->simpaninfotambahan($kduttppeserta,$it->info,$isi);
+
+                            $no++;
+                        }
+                    }
+
                     $pesan = 1;
                     $isipesan = "Daftar uttp peserta baru di tambahkan";
                     break;
@@ -1141,6 +1157,16 @@ class Pelayanan extends CI_Controller {
                         $this->mod_pelayanan->ubahuttp($data);
                     } else {
                         $this->mod_pelayanan->ubahuttp2($data);
+                    }
+
+                    $this->mod_pelayanan->resetinfotambahan($kduttppeserta);
+                    $no = 0;
+                    $infotambahan = $this->mod_pelayanan->infotambahan($kduttp)->result();
+                    foreach ($infotambahan as $it) {;
+                        $isi = $info[$no];
+                        $this->mod_pelayanan->simpaninfotambahan($kduttppeserta,$it->info,$isi);
+
+                        $no++;
                     }
                     
                     $pesan = 2;

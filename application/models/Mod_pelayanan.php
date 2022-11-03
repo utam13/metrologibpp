@@ -264,6 +264,21 @@ class mod_pelayanan extends CI_Model
         $this->db->query("delete from uttppeserta where kduttppeserta='$kode'");
     }
 
+    public function resetinfotambahan($kode)
+    {
+        $this->db->query("delete from infotambahanpeserta where kduttppeserta='$kode'");
+    }
+
+    public function simpaninfotambahan($kduttppeserta,$info,$isi)
+    {
+        $this->db->query("insert into infotambahanpeserta(kduttppeserta,
+                                                info,
+                                                isi) 
+                                        values('$kduttppeserta',
+                                                '$info',
+                                                '$isi')");
+    }
+
     public function ambilpengajuan($kode)
     {
         return $this->db->query("select a.*,

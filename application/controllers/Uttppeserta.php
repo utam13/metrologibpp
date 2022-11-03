@@ -326,7 +326,7 @@ class Uttppeserta extends CI_Controller {
                 "merktype" => $merktype,
                 "kapasitas" => $kapasitas,
                 "noseri" => $noseri,
-                "jml" => $jml,
+                "jml" => 1,
                 "foto" => $foto,
                 "status" => $status
             );
