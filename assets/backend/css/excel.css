@@ -1,0 +1,49 @@
+.judul,
+.record{
+    border-collapse: collapse;
+    width: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 9pt;
+}
+
+.header-top {
+    font-weight: bold;
+    font-size: 14pt !important;
+}
+
+.header-middle {
+    font-weight: bold;
+    font-size: 12pt !important;
+}
+
+.header-bottom {
+    font-weight: bold;
+    font-size: 11pt !important;
+}
+
+.w-judul{
+    width: 70%;
+}
+
+.w-tahun{
+    width: 30%;
+}
+
+.record th, .record td{
+    border-left: 1px solid #000;
+    border-top: 1px solid #000;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
