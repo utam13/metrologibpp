@@ -611,3 +611,37 @@ $('#noskhplama').change(function (){
 		$('#lokasisebelumnya').removeAttr('readonly');
 	}
 })
+
+$('#uttp').change(function(){
+	let pilih = $(this).val();
+
+	console.log(pilih);
+
+	$('.tambahan').html('');
+
+	$.ajax({
+		url: serverloc + '/pelayanan/cekinfotambahan/' + pilih,
+		type: 'get',
+		dataType: 'JSON',
+		success: function (response) {
+			console.log(response);
+			if(response != ''){
+				$.each(response, function (i, field) {
+					let namainfo = field.info;
+					let label =namainfo.toLowerCase().replace(" ", "_");
+					console.log(label);
+
+					$('.tambahan').append('<div class="form-group">'+
+												'<label class="col-sm-3 control-label">'+field.info+'</label>'+
+												'<div class="col-sm-5">'+
+													'<input type="text" class="form-control" name="info[]" id="'+label+'" value="" maxlength=150 autocomplete="off" required />'+
+												'</div>'+
+											'</div>');
+				})
+			}
+		},
+		complete: function(){
+			// $('#rekap .overlay').hide();
+		}
+	});
+})

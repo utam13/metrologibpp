@@ -2499,4 +2499,18 @@ class Pelayanan extends CI_Controller {
         }
     }
 
+    public function cekinfotambahan($kduttp)
+    {
+        $record = array();
+        $subrecord = array();
+
+        $infotambahan = $this->mod_pelayanan->infotambahan($kduttp)->result();
+        foreach ($infotambahan as $it) {
+            $subrecord['info'] = $it->info;
+
+            array_push($record, $subrecord);
+        }
+
+        echo json_encode($record);
+    }
 }

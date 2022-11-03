@@ -697,6 +697,11 @@ class mod_pelayanan extends CI_Model
     {
         return $this->db->query("select * from infotambahan where kduttp='$kode' order by info ASC");
     }
+
+    public function infotambahan($kode)
+    {
+        return $this->db->query("select info from infotambahan where kduttp='$kode' order by info ASC");
+    }
     
     public function cekskhplama($kduttppeserta,$noskhp)
     {
