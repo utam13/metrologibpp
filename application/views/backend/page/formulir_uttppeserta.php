@@ -84,7 +84,7 @@
                                             <label class="col-sm-3 control-label">Jumlah</label>
                                             <div class="col-sm-3">
                                                 <div class="input-group">
-                                                    <input type="number" class="form-control block-specialchar" name="jml" id="jml" value="<?= $jml;?>" min=1 max=999 autocomplete="off" />
+                                                    <input type="number" class="form-control block-specialchar" name="jml" id="jml" value="<?= $jml;?>" min=0 max=999 autocomplete="off" />
                                                     <span class="input-group-addon">unit</span>
                                                 </div>
                                             </div>
