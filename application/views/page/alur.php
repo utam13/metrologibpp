@@ -15,8 +15,8 @@
                         <div class="col-md-3">
                             <div class="about-move">
                                 <div class="services-details">
-                                    <div class="single-services">
-                                        <a class="services-icon" href="#">
+                                    <div class="single-services-alur">
+                                        <a class="services-icon-alur" href="#">
                                             <i class="fa fa-pencil"></i>
                                         </a>
                                         <h4>Langkah 1</h4>
@@ -34,8 +34,8 @@
                         <div class="col-md-3">
                             <div class="about-move">
                                 <div class="services-details">
-                                    <div class="single-services">
-                                        <a class="services-icon" href="#">
+                                    <div class="single-services-alur">
+                                        <a class="services-icon-alur" href="#">
                                             <i class="fa fa-balance-scale"></i>
                                         </a>
                                         <h4>Langkah 2</h4>
@@ -50,8 +50,8 @@
                         <div class="col-md-3">
                             <div class="about-move">
                                 <div class="services-details">
-                                    <div class="single-services">
-                                        <a class="services-icon" href="#">
+                                    <div class="single-services-alur">
+                                        <a class="services-icon-alur" href="#">
                                             <i class="fa fa-file-text"></i>
                                         </a>
                                         <h4>Langkah 3</h4>
@@ -67,8 +67,8 @@
                         <div class="col-md-3">
                             <div class="about-move">
                                 <div class="services-details">
-                                    <div class="single-services">
-                                        <a class="services-icon" href="#">
+                                    <div class="single-services-alur">
+                                        <a class="services-icon-alur" href="#">
                                             <i class="fa fa-calendar"></i>
                                         </a>
                                         <h4>Langkah 4</h4>
@@ -83,8 +83,8 @@
                         <div class="col-md-3">
                             <div class="about-move">
                                 <div class="services-details">
-                                    <div class="single-services">
-                                        <a class="services-icon" href="#">
+                                    <div class="single-services-alur">
+                                        <a class="services-icon-alur" href="#">
                                             <i class="fa fa-bank"></i>
                                         </a>
                                         <h4>Langkah 5</h4>
@@ -99,8 +99,8 @@
                         <div class="col-md-3">
                             <div class="about-move">
                                 <div class="services-details">
-                                    <div class="single-services">
-                                        <a class="services-icon" href="#">
+                                    <div class="single-services-alur">
+                                        <a class="services-icon-alur" href="#">
                                             <i class="fa fa-check"></i>
                                         </a>
                                         <h4>Langkah 6</h4>
@@ -115,8 +115,8 @@
                         <div class="col-md-3">
                             <div class="about-move">
                                 <div class="services-details">
-                                    <div class="single-services">
-                                        <a class="services-icon" href="#">
+                                    <div class="single-services-alur">
+                                        <a class="services-icon-alur" href="#">
                                             <i class="fa fa-folder"></i>
                                         </a>
                                         <h4>Langkah 7</h4>

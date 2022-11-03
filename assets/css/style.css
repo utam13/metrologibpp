@@ -550,13 +550,20 @@ div#preloader {
   position: relative;
 }
 
-.services-icon {
-  /* color: #444; */
-  color: #fff;
+.services-icon,
+.services-icon-alur {
   display: inline-block;
   font-size: 36px;
   line-height: 36px;
   margin-bottom: 20px;
+}
+
+.services-icon {
+  color: #fff;
+}
+
+.services-icon-alur {
+  color: #444;
 }
 
 .section-headline.services-head>h2 {
@@ -569,7 +576,7 @@ div#preloader {
   transition: all 0.5s ease 0s;
 }
 
-.services-details:hover h4, .services-details:hover .services-icon {
+.services-details:hover h4, .services-details:hover .services-icon, .services-details:hover .services-icon-alur {
   color: #E7BD4E;
 }
 
@@ -581,17 +588,30 @@ div#preloader {
   color: #333;
 }
 
-.single-services>h4 {
-  /* color: #444; */
-  color: #fff;
+.single-services>h4, .single-services-alur>h4 {
   font-size: 24px;
   font-weight: 500;
 }
 
-.single-services>p {
-  /* color: #333; */
+.single-services>h4 {
   color: #fff;
+}
+
+.single-services-alur>h4 {
+  color: #444;
+}
+
+.single-services>p,
+.single-services-alur>p {
   font-size: 14px;
+}
+
+.single-services>p {
+  color: #fff;
+}
+
+.single-services-alur>p {
+  color: #444;
 }
 
 /*----------------------------------------
