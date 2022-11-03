@@ -811,6 +811,10 @@ class Permintaan extends CI_Controller {
                     $data['file_izinskhplama'] = $data['file_skhplama'];
                     break;
             }
+
+            if($proses == 4){
+                $data['namabtn'] = "Batalkan Pengajuan";
+            }
         } else {
             $data['kdpengajuan'] = "";
             $data['tglpengajuan'] = date('Y-m-d');
