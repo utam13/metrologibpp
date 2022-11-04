@@ -596,6 +596,28 @@ class mod_pelayanan extends CI_Model
                                         where kdpeserta='$kdpeserta'");
     }
 
+    public function ubahpelanggan2($data)
+    {
+        extract($data);
+        $this->db->query("update peserta set tgldaftar='$tgldaftar',
+                                                kelompok='1',
+                                                npwp='$npwp',
+                                                nama='$nama',
+                                                alamat='$alamat',
+                                                kdkecamatan='$kecamatan',
+                                                kdkelurahan='$kelurahan',
+                                                email='$email',
+                                                telp='$telp',
+                                                nik='$nik',
+                                                namapic='$namapic',
+                                                jabatan='$jabatan',
+                                                telppic='$telppic',
+                                                wa='$wa',
+                                                emailpic='$emailpic',
+                                                status='0'
+                                        where kdpeserta='$kdpeserta'");
+    }
+
     public function hapuspelanggan($kode)
     {
         $this->db->query("delete from pelanggan where pelanggan='$kode'");

@@ -681,7 +681,7 @@ class Pelayanan extends CI_Controller {
         if ($this->session->userdata('stat_log') != "login") {
             redirect(base_url("pelayanan"));
         } else {
-            if($proses < 3){
+            if($proses != 3 && $proses != 4){
                 $kdpeserta =  $this->input->post('kode');
                 $adaplg =  $this->input->post('adaplg');
                 $kdpenyedia =  $this->input->post('kdpenyedia');
@@ -693,6 +693,13 @@ class Pelayanan extends CI_Controller {
                 $kelurahan = $this->input->post('kelurahan');
                 $telp = $this->input->post('telp');
                 $email = $this->input->post('email');
+
+                $nik = $this->input->post('nik');
+                $namapic = $this->input->post('namapic');
+                $jabatan = $this->input->post('jabatan');
+                $telppic = $this->input->post('telppic');
+                $wa = $this->input->post('wa');
+                $emailpic = $this->input->post('emailpic');
         
                 $data = array(
                     "kdpeserta" => $kdpeserta,
@@ -705,6 +712,12 @@ class Pelayanan extends CI_Controller {
                     "kelurahan" => $kelurahan,
                     "telp" => $telp,
                     "email" => $email,
+                    "nik" => $nik,
+                    "namapic" => $namapic,
+                    "jabatan" => $jabatan,
+                    "telppic" => $telppic,
+                    "wa" => $wa,
+                    "emailpic" => $emailpic,
                     "status" => 1
                 );
             }
@@ -781,11 +794,26 @@ class Pelayanan extends CI_Controller {
                         $this->mod_pelayanan->hapuspelanggan($kode);
                             
                         $pesan = 3;
-                        $isipesan = "Daftar pelanggan dari penyedia telah dikurangi";
+                        $isipesan = "Pelanggan telah dikurangi";
                     } else {
                         $pesan = 4;
                         $isipesan = "Masih ada alat belum dialihkan ke pelanggan";
                     }
+                    break;
+                case 5:
+                    $this->mod_pelayanan->ubahpelanggan2($data);
+                    
+                    $cekalatpakai = $this->mod_pelayanan->hitunguttppakai($kdpeserta);
+                    $jmlalat = empty($cekalatpakai) ? 0:$cekalatpakai['total'];
+    
+                    if($jmlalat == 0) {
+                        $this->mod_pelayanan->hapuspelanggan($kdpeserta);
+                        
+                        $isipesan = "Pelanggan telah dikurangi";
+                    } 
+
+                    $pesan = 3;
+                    $isipesan = "Pelanggan telah didaftarkan, password akses akan diinformasikan oleh Admin";
                     break;
             }
 

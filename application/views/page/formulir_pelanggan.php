@@ -75,7 +75,7 @@
                                                         <select class="form-control" id="kelurahan" name="kelurahan" required <?= $proses == 1 ? "disabled":"";?> >
                                                             <option value="">Pilih</option>
                                                             <?
-                                                            if($proses == 2){
+                                                            if($proses >= 2){
                                                                 foreach ($daftarkelurahan as $k) {
                                                                     $pilihkelurahan = $kelurahan == $k->kdkelurahan ? 'selected':'';
                                                                     echo "<option value='".$k->kdkelurahan."' $pilihkelurahan>".$k->nama."</option>";
@@ -118,6 +118,62 @@
                                             <code>*) NPWP pribadi untuk non perusahaan</code>
                                         </div>
                                     </div>
+
+                                    <?if($proses == 5){?>
+                                    <div class="row">
+                                        <div class="col-md-12">&nbsp;</div>
+                                        <div class="col-md-12">
+                                            <fieldset>
+                                                <legend>Informasi PIC</legend>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>NIK</label>
+                                                        <input type="text" class="form-control block-specialchar" name="nik" id="nik" value="" maxlength=150 autocomplete="off" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>Nama</label>
+                                                        <input type="text" class="form-control" name="namapic" id="namapic" value="" maxlength=150 autocomplete="off" required />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>Jabatan</label>
+                                                        <input type="text" class="form-control block-specialchar" name="jabatan" id="jabatan" value="" maxlength=150 autocomplete="off" required />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>Telp</label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                                                            <input type="text" class="form-control block-specialchar" name="telppic" id="telppic" value="" maxlength=150 autocomplete="off" required />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>WhatsApp</label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><i class="fa fa-whatsapp"></i></span>
+                                                            <input type="text" class="form-control block-specialchar" name="wa" id="wa" value="" autocomplete="off" required />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>Email</label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                                            <input type="email" class="form-control" name="emailpic" id="emailpic" value="" maxlength=150 autocomplete="off" required />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                    <?}?>
                                 </div>
                                 <div class="box-footer">
                                     <a href="<?= base_url();?>pelayanan/pelanggan" class="btn btn-danger">Batal</a>
