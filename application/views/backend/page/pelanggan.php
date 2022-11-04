@@ -103,7 +103,7 @@
                                                 <?}?>
 
                                                 <?if($d->kelompok == 3 && ($d->jmluttpmilik != 0 || $d->nominaljmluttp == 0)){?>
-                                                    <a href="<?= base_url();?>pelanggan/formulir/2/<?= $d->kdpeserta;?>" class="btn btn-warning btn-xs" onclick="return confirm('Daftarkan pelanggan berikut:\n<?= $d->npwp;?>\n<?= $d->nama;?>\nSebagai peserta, dikarenakan ada sebagian atau seluruh alat yang sudah menjadi milik pelanggan. Lanjutkan proses ?')">Daftarkan</a>
+                                                    <a href="<?= base_url();?>pelanggan/formulirpelanggan/2/<?= $d->kdpeserta;?>" class="btn btn-warning btn-xs" onclick="return confirm('Daftarkan pelanggan berikut:\n<?= $d->npwp;?>\n<?= $d->nama;?>\nSebagai peserta, dikarenakan ada sebagian atau seluruh alat yang sudah menjadi milik pelanggan. Lanjutkan proses ?')">Daftarkan</a>
                                                 <?}elseif($d->kelompok == 1 && ($d->jmluttpmilik != 0 || $d->nominaljmluttp == 0)){?>
                                                     <a href="#" class="btn btn-default btn-xs" onclick="alert('Pelanggan telah terdaftar sebagai Pemilik Alat namun masih ada alat yang terkait dengan Penyedia\nPerubahan data pelanggan dapat dilakukan secara mandiri oleh pelanggan atau dengan bantuan Admin')">Terdaftar</a>
                                                 <?}else{?>
