@@ -277,7 +277,7 @@ class Permintaan extends CI_Controller {
                         if($cekterima == 1){
                             $subrecord['serahterimaalat']="<a href='#' class='btn $warnastatus_st btn-sm' onclick='alert(\"Alat dapat dikembalikan setelah status menjadi Selesai (Dibatalkan/Sah)\")'>$namastatus_st</a>";
                         } else {
-                            $subrecord['serahterimaalat']="<a href='".base_url()."permintaan/serahterima/1/1/".$subrecord['kdpengajuan']."' class='btn $warnastatus_st btn-sm'>$namastatus_st</a>";
+                            $subrecord['serahterimaalat']="<a href='".base_url()."permintaan/serahterima/1/1/".$subrecord['kdpengajuan']."' class='btn $warnastatus_st btn-xs'>$namastatus_st</a>";
                         }
                     } else {
                         $subrecord['serahterimaalat']="-"; 
@@ -297,7 +297,7 @@ class Permintaan extends CI_Controller {
                             $subrecord['namastatus']="Selesai (Sah)";
                             $subrecord['warnabtn']="bg-green"; 
 
-                            $subrecord['serahterimadok']="<a href='".base_url()."permintaan/serahterima/2/2/".$subrecord['kdpengajuan']."' class='btn $warnastatus_dok btn-sm'>$namastatus_dok</a>";
+                            $subrecord['serahterimadok']="<a href='".base_url()."permintaan/serahterima/2/2/".$subrecord['kdpengajuan']."' class='btn $warnastatus_dok btn-xs'>$namastatus_dok</a>";
                             break;
                         default:
                             $subrecord['namastatus']="Selesai";
@@ -308,7 +308,7 @@ class Permintaan extends CI_Controller {
                     }
 
                     if ($subrecord['lokasi'] == 1) {
-                        $subrecord['serahterimaalat'] = "<a href='".base_url()."permintaan/serahterima/1/$proses_st/".$subrecord['kdpengajuan']."' class='btn $warnastatus_st btn-sm'>$namastatus_st</a>&nbsp;";
+                        $subrecord['serahterimaalat'] = "<a href='".base_url()."permintaan/serahterima/1/$proses_st/".$subrecord['kdpengajuan']."' class='btn $warnastatus_st btn-xs'>$namastatus_st</a>&nbsp;";
                     } else {
                         $subrecord['serahterimaalat'] = "-"; 
                     }
@@ -322,7 +322,7 @@ class Permintaan extends CI_Controller {
                             $subrecord['serahterimadok']="-"; 
                             break;
                         case 2:
-                            $subrecord['serahterimadok']="<a href='".base_url()."permintaan/serahterima/2/2/".$subrecord['kdpengajuan']."' class='btn $warnastatus_dok btn-sm'>$namastatus_dok</a>";
+                            $subrecord['serahterimadok']="<a href='".base_url()."permintaan/serahterima/2/2/".$subrecord['kdpengajuan']."' class='btn $warnastatus_dok btn-xs'>$namastatus_dok</a>";
                             break;
                         default:
                             $subrecord['serahterimadok']="-"; 
@@ -330,7 +330,7 @@ class Permintaan extends CI_Controller {
                     }
 
                     if ($subrecord['lokasi'] == 1) {
-                        $subrecord['serahterimaalat'] = "<a href='".base_url()."permintaan/serahterima/1/$proses_st/".$subrecord['kdpengajuan']."' class='btn $warnastatus_st btn-sm'>$namastatus_st</a>&nbsp;";
+                        $subrecord['serahterimaalat'] = "<a href='".base_url()."permintaan/serahterima/1/$proses_st/".$subrecord['kdpengajuan']."' class='btn $warnastatus_st btn-xs'>$namastatus_st</a>&nbsp;";
                     } else {
                         $subrecord['serahterimaalat'] = "-"; 
                     }

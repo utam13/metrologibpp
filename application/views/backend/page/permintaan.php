@@ -151,7 +151,7 @@
                                                 </td>
                                                 <td class="text-center" nowrap>
                                                     <?if($h->serahterimaalat != "-"){?>
-                                                    <a href="<?= base_url();?>permintaan/cetakterima/<?= $h->kdpengajuan;?>" target="prosesdata" class="btn btn-default btn-sm"><i class="fa fa-print"></i></a>
+                                                    <a href="<?= base_url();?>permintaan/cetakterima/<?= $h->kdpengajuan;?>" target="prosesdata" class="btn btn-default btn-xs"><i class="fa fa-print"></i></a>
                                                     <?}?>
                                                     <?= $h->serahterimaalat;?>
                                                 </td>
