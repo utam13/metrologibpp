@@ -18,7 +18,7 @@
                     <li class="<?= $halaman=="Kantor" ? "active":"";?>"><a href="<?= base_url(); ?>kantor"><i class="fa fa-circle-o"></i> <span>Kantor</span></a></li>
                     <li class="<?= $halaman=="Slide" ? "active":"";?>"><a href="<?= base_url(); ?>slide"><i class="fa fa-circle-o"></i> <span>Slide</span></a></li>
                     <li class="<?= $halaman=="Tentang Kami" ? "active":"";?>"><a href="<?= base_url(); ?>tentang"><i class="fa fa-circle-o"></i> <span>Tentang Kami</span></a></li>
-                    <li class="<?= $halaman=="Visi & Misi" ? "active":"";?>"><a href="<?= base_url(); ?>visimisi"><i class="fa fa-circle-o"></i> <span>Visi & Misi</span></a></li>
+                    <!-- <li class="<?= $halaman=="Visi & Misi" ? "active":"";?>"><a href="<?= base_url(); ?>visimisi"><i class="fa fa-circle-o"></i> <span>Visi & Misi</span></a></li> -->
                     <li class="<?= $halaman=="Layanan" ? "active":"";?>"><a href="<?= base_url(); ?>layanan"><i class="fa fa-circle-o"></i> <span>Layanan</span></a></li>
                     <li class="<?= $halaman=="Regulasi" ? "active":"";?>"><a href="<?= base_url(); ?>regulasi"><i class="fa fa-circle-o"></i> <span>Regulasi</span></a></li>
                     <li class="<?= $halaman=="SOP" ? "active":"";?>"><a href="<?= base_url(); ?>sop"><i class="fa fa-circle-o"></i> <span>SOP</span></a></li>
