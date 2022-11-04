@@ -34,7 +34,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>NIP</label>
+                                        <label>NIP/NIK</label>
                                         <input type="text" class="form-control" id="nip" name="nip" value="" maxlength=100 autocomplete="off" required />
                                     </div>
                                 </div>
