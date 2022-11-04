@@ -26,7 +26,7 @@
                     <div class="box-header with-border">
                         <h3 class="box-title">
                             <a href="<?= base_url();?>peserta" class="btn btn-default btn-sm"><i class="fa fa-reply"></i> Kembali</a>
-                            <a href="<?= base_url();?>pelanggan/formulirpelanggan/<?= $kdpenyedia;?>/1" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> Tambah Peserta</a>
+                            <a href="<?= base_url();?>pelanggan/formulirpelanggan/<?= $kdpenyedia;?>/1" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> Tambah Pelanggan</a>
                         </h3>
 
                         <div style="float:right">
