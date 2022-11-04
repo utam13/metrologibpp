@@ -275,7 +275,7 @@ class Permintaan extends CI_Controller {
 
                     if ($subrecord['lokasi'] == 1) {
                         if($cekterima == 1){
-                            $subrecord['serahterimaalat']="<a href='#' class='btn $warnastatus_st btn-sm' onclick='alert(\"Alat dapat dikembalikan setelah status menjadi Selesai (Dibatalkan/Sah)\")'>$namastatus_st</a>";
+                            $subrecord['serahterimaalat']="<a href='#' class='btn $warnastatus_st btn-xs' onclick='alert(\"Alat dapat dikembalikan setelah status menjadi Selesai (Dibatalkan/Sah)\")'>$namastatus_st</a>";
                         } else {
                             $subrecord['serahterimaalat']="<a href='".base_url()."permintaan/serahterima/1/1/".$subrecord['kdpengajuan']."' class='btn $warnastatus_st btn-xs'>$namastatus_st</a>";
                         }
