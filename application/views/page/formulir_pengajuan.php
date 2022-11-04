@@ -116,8 +116,8 @@
                                                     <dt>Hasil Layanan</dt><dd class="text-bold <?= $warnahasil;?>"><?= $namahasiluji;?></dd>
                                                     <dt>Dokumen Cerapan</dt><dd><?= $cerapan == '' ? '-': '<a href="'.$file_cerapan.'" target="_blank" class="btn btn-info btn-xs btn-lihat">Lihat</a>';?></dd>
                                                     <dt>Keterangan</dt><dd><?= $keterangan == '' ? '-':$keterangan;?></dd>
-                                                    <dt>Dokumen SKRD</dt><dd><?= $nosuratskrd." (".date('d-m-Y',strtotime($tglsuratskrd)).")";?></dd>
-                                                    <dt>Dokumen SKHP</dt><dd><?= $nosuratskhp." (".date('d-m-Y',strtotime($tglsuratskhp)).")";?></dd>
+                                                    <dt>Dokumen SKRD</dt><dd><?= $skrd;?></dd>
+                                                    <dt>Dokumen SKHP</dt><dd><?= $skhp;?></dd>
                                                     <?}?>
                                                 </dl>
                                             </fieldset>

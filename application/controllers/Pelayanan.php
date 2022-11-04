@@ -1532,7 +1532,8 @@ class Pelayanan extends CI_Controller {
                 $data['nosuratskrd'] = $ambilpengajuan['nosuratskrd'];
                 $data['tglsuratskrd'] =$ambilpengajuan['tglsuratskrd'];
                 $data['nosuratskhp'] = $ambilpengajuan['nosuratskhp'];
-                $data['tglsuratskhp'] =$ambilpengajuan['tglsuratskhp'];
+                $data['tglsuratskhp'] = $ambilpengajuan['tglsuratskhp'];
+                // $data['berlaku'] = $ambilpengajuan['berlakuskhp'];
                 $data['fotokondisi'] = $ambilpengajuan['fotokondisi'];
                 $data['izinpersetujuantipe'] = $ambilpengajuan['izinpersetujuantipe'];
                 $data['skhplama'] = $ambilpengajuan['skhplama'];
@@ -1549,6 +1550,12 @@ class Pelayanan extends CI_Controller {
                 $data['cerapan'] = $ambilpengajuan['cerapan'];
                 $data['status'] = $ambilpengajuan['status'];
                 $data['alasanbatal'] = $ambilpengajuan['alasanbatal'];
+
+                if($ambilpengajuan['berlakuskhp'] != "") list($thn,$bln,$hr) = explode('-',$ambilpengajuan['berlakuskhp']);
+                $data['berlakuskhp'] = $ambilpengajuan['berlakuskhp'] != "" ?  $this->namabulan->namabln($bln)." ".$thn: "-";
+
+                $data['skrd'] = $data['nosuratskrd'] == '' ? '-' : $data['nosuratskrd'] . ' ' . date('d-m-Y',strtotime($data['tglsuratskrd'])); 
+                $data['skhp'] = $data['nosuratskhp'] == '' ? '-' : $data['nosuratskhp'] . ' ' . date('d-m-Y',strtotime($data['tglsuratskhp'])) . "<br>Berlaku sampai ".$data['berlakuskhp']; 
 
                 if($ambilpengajuan['berlakuskhplama'] != "" && strtotime($ambilpengajuan['berlakuskhplama']) <= strtotime($data['tglsekarang'])){
                     $data['statusekspired'] = '<a href="#" class="btn btn-danger btn-xs">Expired</a>';
