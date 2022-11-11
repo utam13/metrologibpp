@@ -166,6 +166,10 @@
     border: 0px solid #fff;
   }
 
+  .textheader{
+    left: 45px !important;
+  }
+
   .instansi span{
     font-size: 1.5rem !important;
   }
