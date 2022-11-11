@@ -182,19 +182,26 @@ class Info extends CI_Controller {
 
             $subrecord['info'] =  "<span class='text-bold nama-uttp'>".$d->nama."</span>";
             $subrecord['info'] .=  "<br><span class='text-bold'>Total terdata:</span> <span class='text-red'>".$subrecord['total']." unit</span>";
-            if($d->teraulang != "0"){
-                $subrecord['teraulang'] = $d->teraulang." tahun";
-                $subrecord['info'] .= "<br><span class='text-bold'>Jangka waktu tera ulang:</span> <span class='text-red'>".$d->teraulang." tahun</span>";
+
+            if($d->berlaku != "0" && $d->berlaku != ""){
+                $subrecord['info'] .= "<br><span class='text-bold'>Masa berlaku SKHP:</span> <span class='text-red'>".$d->berlaku." bulan</span>";
             } else {
-                $subrecord['teraulang'] = "tidak ditentukan";
-                $subrecord['info'] .= "<br><span class='text-bold'>Jangka waktu tera ulang:</span> <span class='text-red'>tidak ditentukan</span>";
+                $subrecord['info'] .= "<br><span class='text-bold'>Masa berlaku SKHP:</span> <span class='text-red'>-</span>";
             }
 
-            if($subrecord['doktambahan'] != ""){
-                $subrecord['info'] .= "<br><span class='text-bold'>Dokumen Tambahan yang dibutuhkan:</span> <span class='text-red'>".$subrecord['doktambahan']." tahun</span>";
-            } else {
-                $subrecord['info'] .= "<br><span class='text-bold'>Dokumen Tambahan yang dibutuhkan:</span> <span class='text-red'>tidak ada</span>";
-            }
+            // if($d->teraulang != "0"){
+            //     $subrecord['teraulang'] = $d->teraulang." tahun";
+            //     $subrecord['info'] .= "<br><span class='text-bold'>Jangka waktu tera ulang:</span> <span class='text-red'>".$d->teraulang." tahun</span>";
+            // } else {
+            //     $subrecord['teraulang'] = "tidak ditentukan";
+            //     $subrecord['info'] .= "<br><span class='text-bold'>Jangka waktu tera ulang:</span> <span class='text-red'>tidak ditentukan</span>";
+            // }
+
+            // if($subrecord['doktambahan'] != ""){
+            //     $subrecord['info'] .= "<br><span class='text-bold'>Dokumen Tambahan yang dibutuhkan:</span> <span class='text-red'>".$subrecord['doktambahan']." tahun</span>";
+            // } else {
+            //     $subrecord['info'] .= "<br><span class='text-bold'>Dokumen Tambahan yang dibutuhkan:</span> <span class='text-red'>tidak ada</span>";
+            // }
 
             if($d->keterangan != ""){
                 $subrecord['info'] .= "<br><span class='text-bold'>Keterangan:</span><br>".$d->keterangan;
