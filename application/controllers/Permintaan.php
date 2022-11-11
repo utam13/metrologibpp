@@ -41,10 +41,16 @@ class Permintaan extends CI_Controller {
 
         $q_cari = "";
         if ($getcari != "") {
-            if($getkategori == 'expired'){
-                $q_cari = "a.berlakuskph<='$getcari'";
-            } else {
-                $q_cari = "$getkategori like '%$getcari%'";
+            switch ($getkategori) {
+                case 'expired':
+                    $q_cari = "a.berlakuskph<='$getcari'";
+                    break;
+                case 'a.status':
+                    $q_cari = "a.status='$getcari'";
+                    break;
+                default:
+                    $q_cari = "$getkategori like '%$getcari%'";
+                    break;
             }
         } else {
             $q_cari = "b.nama<>''";
