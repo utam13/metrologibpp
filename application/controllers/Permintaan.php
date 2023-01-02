@@ -114,7 +114,7 @@ class Permintaan extends CI_Controller {
             $subrecord['alasanbatal'] = $d->alasanbatal != "" ? $d->alasanbatal : "";
 
             $subrecord['noskhplama'] = $d->noskhplama != "" ? $d->noskhplama : "-";
-            $subrecord['tglskhplama'] = $d->tglskhplama != "" ? date('d-m-Y',strtotime($d->tglskhplama)) : "-";
+            $subrecord['tglskhplama'] = $d->tglskhplama != "" && $d->tglskhplama != "0000-00-00" ? date('d-m-Y',strtotime($d->tglskhplama)) : "-";
 
             if($d->berlakuskhp != "" && $d->berlakuskhp != '0000-00-00' && strtotime($d->berlakuskhp) <= strtotime(date('Y-m-d'))){
                 $statusekspired = '<a href="#" class="btn bg-black btn-xs">Expired</a>';
