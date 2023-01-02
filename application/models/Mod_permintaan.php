@@ -337,7 +337,7 @@ class mod_permintaan extends CI_Model
 
     public function cekkembali($kdpengajuan)
     {
-        return $this->db->query("select kdserahterima from serahterima where kdpengajuan='$kdpengajuan' and kelompok='1' and (tglkembali<>'' or tglkembali<>'0000-00-00')")->num_rows();
+        return $this->db->query("select kdserahterima from serahterima where kdpengajuan='$kdpengajuan' and kelompok='1' and (tglkembali <> NULL or tglkembali <> '0000-00-00')")->num_rows();
     }
 
     public function cekterimadok($kdpengajuan)
