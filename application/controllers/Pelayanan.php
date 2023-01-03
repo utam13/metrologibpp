@@ -2305,10 +2305,10 @@ class Pelayanan extends CI_Controller {
                 $subrecord['kdlayanan'] = $d->kdlayanan;
                 $subrecord['nama'] = $d->nama;
                 $subrecord['namauttp'] = $d->namauttp;
-                $subrecord['jadwal'] = $d->jadwal != "" ? date('d-m-Y',strtotime($d->jadwal)) : "-";
+                $subrecord['jadwal'] = $d->jadwal != "" && $d->jadwal != "0000-00-00" ? date('d-m-Y',strtotime($d->jadwal)) : "-";
                 $subrecord['kdpegawai'] = $d->kdpegawai;
                 $subrecord['nobukti'] = $d->nobukti != "" ? $d->nobukti : "-";
-                $subrecord['tglbayar'] = $d->tglbayar != "" ? date('d-m-Y',strtotime($d->tglbayar)) : "-";
+                $subrecord['tglbayar'] = $d->tglbayar != "" && $d->tglbayar != "0000-00-00" ? date('d-m-Y',strtotime($d->tglbayar)) : "-";
                 $subrecord['buktibayar'] = $d->buktibayar;
                 $subrecord['nosuratskrd'] = $d->nosuratskrd;
                 $subrecord['tglsuratskrd'] = date('d-m-Y',strtotime($d->tglsuratskrd));
@@ -2320,7 +2320,7 @@ class Pelayanan extends CI_Controller {
                 $subrecord['hasil'] = $d->hasil != "" ? $d->hasil : "-";
 
                 $subrecord['noskhplama'] = $d->noskhplama != "" ? $d->noskhplama : "-";
-                $subrecord['tglskhplama'] = $d->tglskhplama != "" ? date('d-m-Y',strtotime($d->tglskhplama)) : "-";
+                $subrecord['tglskhplama'] = $d->tglskhplama != "" && $d->tglskhplama != "0000-00-00" ? date('d-m-Y',strtotime($d->tglskhplama)) : "-";
 
                 if($d->berlakuskhplama != "" && $d->berlakuskhplama != '0000-00-00' && strtotime($d->berlakuskhplama) <= strtotime(date('Y-m-d'))){
                     $statusekspired2 = '<a href="#" class="btn bg-black btn-xs">Expired</a>';
