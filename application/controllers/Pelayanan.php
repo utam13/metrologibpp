@@ -2194,7 +2194,7 @@ class Pelayanan extends CI_Controller {
                     }
     
                     $this->mod_pelayanan->hapusdoktambahan($kode);
-                    $this->mod_pelayanan->hapus($kode);
+                    $this->mod_pelayanan->hapuspengajuan($kode);
                     
                     $pesan = 3;
                     $isipesan = "Data pengajuan serta file terkait dihapus";
