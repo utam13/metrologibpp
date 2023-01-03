@@ -100,7 +100,7 @@
                                                 <td nowrap class="text-center">
                                                     <a href="<?= $h->status == 0 || $h->status == 1 || $h->status == 2 ? base_url()."pelayanan/formulirpengajuan/$kdpeserta/$mode/$h->kduttppeserta/2/$h->kdpengajuan" : "#";?>" class="btn <?= $h->warnabtn;?> btn-xs"><?= $h->namastatus;?></a>
                                                     <?if($h->status == 0){?>
-                                                    <a href="<?= base_url();?>pelayanan/prosespengajuan/$kdpeserta/$mode//3/<?= $h->kdpengajuan;?>" class="btn btn-danger btn-xs" onclick="return confirm('Membatalkan pengajuan tera/tera ulang untuk <?= $nama;?> ?')">Batal Pengajuan</a>
+                                                    <a href="<?= base_url();?>pelayanan/prosespengajuan/<?= $kdpeserta;?>/<?= $mode;?>/3/<?= $h->kdpengajuan;?>" class="btn btn-danger btn-xs" onclick="return confirm('Membatalkan pengajuan tera/tera ulang untuk <?= $nama;?> ?')">Batal Pengajuan</a>
                                                     <?}?>
                                                 </td>
                                                 <td nowrap class="text-center"><?= $h->tglpengajuan;?></td>
