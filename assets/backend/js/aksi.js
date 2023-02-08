@@ -1,4 +1,4 @@
-const serverloc =  "http://"+window.location.hostname+":8080/metrologibpp";
+const serverloc =  "https://"+window.location.hostname;
 
 function formatNumber(num) {
 	return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
