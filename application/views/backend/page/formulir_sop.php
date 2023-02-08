@@ -50,7 +50,7 @@
                                         </div>
                                         <input type="text" class="sr-only" id="kontrol" value="sop" />
                                         <input type="text" class="sr-only" id="nama-file" value="<?= date('dmYhis');?>" />
-                                        <input type="file" class="sr-only" id="pilih-berkas" value="" accept=".pdf" />
+                                        <input type="file" class="sr-only" id="pilih-berkas" value="" accept=".jpg,.jpeg,.png,.pdf" />
                                     </div>
                                 </div>
                             </div>

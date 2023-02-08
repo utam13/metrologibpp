@@ -47,7 +47,7 @@
                                                     </span>
                                                     <input type="text" class="form-control block-input" name="berkas" id="berkas" value="<?= $berkas;?>" >
                                                     <input type="text" class="sr-only" id="kontrol" value="dokumen" />
-                                                    <input type="file" class="sr-only" id="pilih-berkas" value="" accept=".pdf" />
+                                                    <input type="file" class="sr-only" id="pilih-berkas" value="" accept=".jpg,.jpeg,.png,.pdf" />
                                                     <span class="input-group-btn">
                                                         <button type="button" class="btn btn-primary btn-flat btn-pilih <?= $berkas != "" ? "sr-only": "";?>" onclick="upload_berkas()">Pilih</button>
                                                         <button type="button" class="btn btn-danger btn-flat btn-batal <?= $berkas != "" ? "": "sr-only";?>" onclick="batal_berkas('dokumen')">Batal Berkas</button>

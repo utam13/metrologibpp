@@ -634,7 +634,7 @@ class mod_pelayanan extends CI_Model
 
     public function adapengajuan2($kode)
     {
-        return $this->db->query("select kdpengajuan from pengajuan where kduttppeserta='$kode' and status<>'5'")->num_rows();
+        return $this->db->query("select kdpengajuan from pengajuan where kduttppeserta='$kode' and status<>'5' and status<>'10'")->num_rows();
     }
 
     public function uttppeserta($kode)

@@ -38,7 +38,7 @@
 							<?
 							foreach ($regulasi as $r) {
 								echo '<li>'.
-										'<i class="fa fa-check"></i><p style="margin: -22px 0 0 20px">'.$r->nama.' (Nomor '.$r->nomor.' Tahun '.$r->thn.') <a href="'.base_url().'info/viewPdf/regulasi/'.$r->berkas.'" target="_blank" class="btn btn-info btn-xs">Lihat</a></p>'. 
+										'<i class="fa fa-check"></i><p style="margin: -22px 0 0 20px">'.$r->nama.' (Nomor '.$r->nomor.' Tahun '.$r->thn.') <a href="'.base_url().'upload/regulasi/'.$r->berkas.'" target="_blank" class="btn btn-info btn-xs">Lihat</a></p>'. 
 									'</li>';
 							}
 							?>

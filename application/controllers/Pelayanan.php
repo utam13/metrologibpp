@@ -130,7 +130,7 @@ class Pelayanan extends CI_Controller {
     public function upload($namaberkas)
     {
         $config['upload_path']        = './upload/pelayanan';
-        $config['allowed_types']     = 'pdf';
+        $config['allowed_types']     = 'jpg|jpeg|png|pdf';
         $config['file_name']        = $namaberkas;
         $config['overwrite']        = true;
 
@@ -933,8 +933,6 @@ class Pelayanan extends CI_Controller {
 
                 $subrecord['adapengajuanaktif'] = $this->mod_pelayanan->adapengajuan2($subrecord['kduttppeserta']);
 
-                $subrecord['adapengajuanaktif'] = $this->mod_pelayanan->adapengajuan2($subrecord['kduttppeserta']);
-
                 $subrecord['jmlpengajuan'] = $this->mod_pelayanan->jmlpengajuan($d->kduttppeserta);
 
                 $subrecord['infotambahan'] = '';
@@ -1328,7 +1326,7 @@ class Pelayanan extends CI_Controller {
                 $subrecord['kdpegawai'] = $d->kdpegawai;
 
                 $subrecord['noskhplama'] = $d->noskhplama != "" ? $d->noskhplama : "-";
-                $subrecord['tglskhplama'] = $d->tglskhplama != "" ? date('d-m-Y',strtotime($d->tglskhplama)) : "-";
+                $subrecord['tglskhplama'] = $d->tglskhplama != "" && $d->tglskhplama != '0000-00-00' ? date('d-m-Y',strtotime($d->tglskhplama)) : "-";
     
                 if($d->berlakuskhp != "" && $d->berlakuskhp != '0000-00-00' && strtotime($d->berlakuskhp) <= strtotime(date('Y-m-d'))){
                     $statusekspired = '<a href="#" class="btn bg-black btn-xs">Expired</a>';
@@ -1396,7 +1394,8 @@ class Pelayanan extends CI_Controller {
                  // penera
                 if($subrecord['kdpegawai'] != ""){
                 $cekpeneratetapan = $this->mod_pelayanan->cekpeneratetapan($subrecord['kdpegawai']);
-                    $subrecord['namapenera'] = empty($cekpeneratetapan) ? "-":$cekpeneratetapan['nip']." - ".$cekpeneratetapan['nama'];
+                    // $subrecord['namapenera'] = empty($cekpeneratetapan) ? "-":$cekpeneratetapan['nip']." - ".$cekpeneratetapan['nama'];
+                    $subrecord['namapenera'] = empty($cekpeneratetapan) ? "-":$cekpeneratetapan['nama'];
                 } else {
                     $subrecord['namapenera'] = "-";
                 }
@@ -1499,7 +1498,7 @@ class Pelayanan extends CI_Controller {
                 $data['tglterakhir'] = '';
                 $data['berlaku'] = '';
                 $data['lokasipengurusan'] = '';
-                $data['namalayanan'] = '';
+                $data['namalayanan'] = 'Tera';
             }
 
             // info tambahan
@@ -1643,22 +1642,26 @@ class Pelayanan extends CI_Controller {
                     $data['tgl1'] = $ambilpilihan['tgl1']; 
     
                     $cekpenera = $this->mod_pelayanan->cekpeneratetapan($ambilpilihan['pegawai1']);
-                    $data['pegawai1'] = empty($cekpenera) ? "":" (".$cekpenera['nip']." - ".$cekpenera['nama'].")";
+                    // $data['pegawai1'] = empty($cekpenera) ? "":" (".$cekpenera['nip']." - ".$cekpenera['nama'].")";
+                    $data['pegawai1'] = empty($cekpenera) ? "":$cekpenera['nama'];
     
                     $data['tgl2'] = $ambilpilihan['tgl2']; 
     
                     $cekpenera = $this->mod_pelayanan->cekpeneratetapan($ambilpilihan['pegawai2']);
-                    $data['pegawai2'] = empty($cekpenera) ? "":" (".$cekpenera['nip']." - ".$cekpenera['nama'].")";
+                    // $data['pegawai2'] = empty($cekpenera) ? "":" (".$cekpenera['nip']." - ".$cekpenera['nama'].")";
+                    $data['pegawai2'] = empty($cekpenera) ? "":$cekpenera['nama'];
                     
                     $data['tgl3'] = $ambilpilihan['tgl3']; 
     
                     $cekpenera = $this->mod_pelayanan->cekpeneratetapan($ambilpilihan['pegawai3']);
-                    $data['pegawai3'] = empty($cekpenera) ? "":" (".$cekpenera['nip']." - ".$cekpenera['nama'].")";
+                    // $data['pegawai3'] = empty($cekpenera) ? "":" (".$cekpenera['nip']." - ".$cekpenera['nama'].")";
+                    $data['pegawai3'] = empty($cekpenera) ? "":$cekpenera['nama'];
     
                     $data['tgl4'] = $ambilpilihan['tgl4']; 
     
                     $cekpenera = $this->mod_pelayanan->cekpeneratetapan($ambilpilihan['pegawai4']);
-                    $data['pegawai4'] = empty($cekpenera) ? "":" (".$cekpenera['nip']." - ".$cekpenera['nama'].")";
+                    // $data['pegawai4'] = empty($cekpenera) ? "":" (".$cekpenera['nip']." - ".$cekpenera['nama'].")";
+                    $data['pegawai4'] = empty($cekpenera) ? "":$cekpenera['nama'];
     
                     $data['status_tgl1'] = $data['jadwal2'] != $ambilpilihan['tgl1'] && strtotime($data['tglsekarang']) >= strtotime($ambilpilihan['tgl1']) ? "disabled" : "";
                     $data['status_tgl2'] = $data['jadwal2'] != $ambilpilihan['tgl2'] &&strtotime($data['tglsekarang']) >= strtotime($ambilpilihan['tgl2']) ? "disabled" : "";
@@ -1668,7 +1671,8 @@ class Pelayanan extends CI_Controller {
     
                 // penera
                 $cekpeneratetapan = $this->mod_pelayanan->cekpeneratetapan($data['kdpegawai']);
-                $data['namapenera'] = empty($cekpeneratetapan) ? "-":$cekpeneratetapan['nip']." - ".$cekpeneratetapan['nama'];
+                // $data['namapenera'] = empty($cekpeneratetapan) ? "-":$cekpeneratetapan['nip']." - ".$cekpeneratetapan['nama'];
+                $data['namapenera'] = empty($cekpeneratetapan) ? "-":$cekpeneratetapan['nama'];
     
                 /* berkas tambahan */
                 $no = 1;

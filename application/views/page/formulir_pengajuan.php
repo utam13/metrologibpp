@@ -23,12 +23,12 @@
                                 <input type="text" class="sr-only" id="kdpenyedia" name="kdpenyedia" value="<?= $kdpenyedia;?>" />
                                 <input type="text" class="sr-only" id="kduttppeserta" name="kduttppeserta" value="<?= $kduttppeserta;?>" />
                                 <input type="text" class="sr-only" id="status" name="status" value="<?= $status;?>" />
-                                <input type="text" class="sr-only" id="namalayanan" name="namalayanan" value="<?= $nama;?>" />
+                                <input type="text" class="sr-only" id="namalayanan" name="namalayanan" value="<?= $namalayanan;?>" />
                                 <input type="text" class="sr-only" id="noskhp" name="noskhp" value="<?= $noskhp;?>" />
                                 <input type="text" class="sr-only" id="kontrol" value="" />
-                                <input type="file" class="sr-only" id="pilih-berkas" value="" accept=".jpg,.jpeg,,.png,.gif,.bmp,.pdf" />
+                                <input type="file" class="sr-only" id="pilih-berkas" value="" accept=".jpg,.jpeg,.png,.gif,.bmp,.pdf" />
                                 <input type="text" class="sr-only" id="tambahanke" value="" />
-                                <input type="file" class="sr-only" id="pilih-tambahan" value="" accept=".jpg,.jpeg,,.png,.gif,.bmp,.pdf" />
+                                <input type="file" class="sr-only" id="pilih-tambahan" value="" accept=".jpg,.jpeg,.png,.gif,.bmp,.pdf" />
                                 <input type="text" class="sr-only" id="hasilawal" name="hasilawal" value="<?= $hasiluji;?>" />
                                 <input type="text" class="sr-only" id="jadwalawal" name="jadwalawal" value="<?= $jadwal2;?>" />
                                 <input type="text" class="sr-only" id="pegawaiawal" name="pegawaiawal" value="<?= $kdpegawai;?>" />

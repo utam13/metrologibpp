@@ -1,8 +1,38 @@
-const serverloc =  "https://"+window.location.hostname;
+const serverloc =  "http://"+window.location.hostname+":8080/metrologibpp";
 
 function formatNumber(num) {
 	return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
 }
+
+function fnBrowserDetect(){
+	let userAgent = navigator.userAgent;
+	let browserName;
+	
+	if(userAgent.match(/chrome|chromium|crios/i)){
+		browserName = "chrome";
+	}else if(userAgent.match(/firefox|fxios/i)){
+		browserName = "firefox";
+	}  else if(userAgent.match(/safari/i)){
+		browserName = "safari";
+	}else if(userAgent.match(/opr\//i)){
+		browserName = "opera";
+	} else if(userAgent.match(/edg/i)){
+		browserName = "edge";
+	}else{
+		browserName="No browser detection";
+	}
+	
+	return browserName;        
+}
+
+$(document).ready(function() {
+	let cekbrowser = fnBrowserDetect();
+
+	if (cekbrowser == 'firefox') {
+		alert('Komponen web ini tidak di support oleh browser Firefox');
+		window.open(serverloc + '/login/logout','_self');
+	}
+});
 
 //lihat password
 function lihatpassword() {
@@ -575,12 +605,12 @@ $('#pilihan').click(function (){
 
 $('#hasil').change(function (){
 	let pilih = $(this).val();
-	let cerapan = $('#berkas_cerapan').val();
+	// let cerapan = $('#berkas_cerapan').val();
 
-	if(cerapan != ""){
-		alert('Berkas Cerapan sudah diupload\nSilakan dibatalkan terlebih dahulu untuk mengubah hasil !!!');
-	} else {
-		$('#berkas_cerapan').val('');
+	// if(cerapan != ""){
+	// 	alert('Berkas Cerapan sudah diupload\nSilakan dibatalkan terlebih dahulu untuk mengubah hasil !!!');
+	// } else {
+		// $('#berkas_cerapan').val('');
 		$('#keterangan').val('');
 
 		switch(pilih){
@@ -588,7 +618,7 @@ $('#hasil').change(function (){
 				$('.btn-pilih5').attr('disabled','disabled');
 				$('#keterangan').attr('disabled','disabled');
 
-				$('#berkas_cerapan').removeAttr('required');
+				// $('#berkas_cerapan').removeAttr('required');
 				$('#keterangan').removeAttr('required');
 
 				$('.btn-simpan').html('Update Layanan');
@@ -599,7 +629,7 @@ $('#hasil').change(function (){
 				$('.btn-pilih5').attr('disabled','disabled');
 				$('#keterangan').removeAttr('disabled');
 
-				$('#berkas_cerapan').removeAttr('required');
+				// $('#berkas_cerapan').removeAttr('required');
 				$('#keterangan').attr('required',true);
 
 				$('#tgltetapan').attr('readonly',true);
@@ -612,7 +642,7 @@ $('#hasil').change(function (){
 				$('.btn-pilih5').removeAttr('disabled');
 				$('#keterangan').attr('disabled','disabled');
 
-				$('#berkas_cerapan').attr('required',true);
+				// $('#berkas_cerapan').attr('required',true);
 				$('#keterangan').removeAttr('required');
 
 				$('#tgltetapan').attr('readonly',true);
@@ -622,7 +652,7 @@ $('#hasil').change(function (){
 				$('.btn-pilih5').focus();
 				break;
 		}
-	}
+	// }
 })
 
 function ceknpwp() {

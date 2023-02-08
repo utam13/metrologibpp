@@ -480,7 +480,7 @@ class Uttp extends CI_Controller {
     public function uploaddokumen($namaberkas)
     {
         $config['upload_path']        = './upload/doktambahan';
-        $config['allowed_types']     = 'pdf';
+        $config['allowed_types']     = 'jpg|jpeg|png|pdf';
         $config['file_name']        = $namaberkas;
         $config['overwrite']        = true;
 

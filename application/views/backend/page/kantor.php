@@ -42,7 +42,7 @@
                                 <p class="text-muted text-center"><i>klik untuk mengubah logo aplikasi maksimal 100 kb</i></p>
                             </div>
                         </div>                        
-                        <input type="file" id="pilih_logo" accept=".jpg,.jpeg,,.png,.gif,.bmp" style="display:none;">  
+                        <input type="file" id="pilih_logo" accept=".jpg,.jpeg,.png,.gif,.bmp" style="display:none;">  
                         </form>  
                     </div>                    
                 </div>

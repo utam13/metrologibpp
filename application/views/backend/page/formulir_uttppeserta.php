@@ -29,7 +29,7 @@
                         <input type="text" class="sr-only" id="kdpenyedia" name="kdpenyedia" value="<?= $kdpenyedia;?>" />
                         <input type="text" class="sr-only" id="kontrol" value="" />
                         <input type="text" class="sr-only" id="namafile" name="namafile" value="<?= $foto;?>" />
-                        <input type="file" class="sr-only" id="pilih-berkas" value="" accept=".jpg,.jpeg,,.png,.gif,.bmp" />
+                        <input type="file" class="sr-only" id="pilih-berkas" value="" accept=".jpg,.jpeg,.png,.gif,.bmp" />
                         <div class="box-body">
                             <div class="row">
                                 <div class="col-md-7">

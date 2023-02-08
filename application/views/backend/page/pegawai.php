@@ -62,7 +62,7 @@
                                         <tr>
                                             <th scope="col" nowrap class="text-center" style="width:5%;">No.</th>
                                             <th scope="col" nowrap class="text-center" style="width:10%;">#</th>
-                                            <th scope="col" nowrap class="text-center" style="width:20%;">NIP/NIK</th>
+                                            <!-- <th scope="col" nowrap class="text-center" style="width:20%;">NIP/NIK</th> -->
                                             <th scope="col" nowrap class="text-center" style="width:45%;">Nama</th>
                                             <th scope="col" nowrap class="text-center" style="width:20%;">Jabatan</th>
                                         </tr>
@@ -78,7 +78,7 @@
                                                 <a href="<?= base_url();?>pegawai/formulir/2/<?= $d->kdpegawai; ?>" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
                                                 <a href="<?= base_url();?>pegawai/proses/3/<?= $d->kdpegawai;?>" class="btn btn-danger btn-xs" onclick="return confirm('Menghapus pegawai dengan nama\n<?= $d->nama;?>\nLanjutkan proses ?')"><i class="fa fa-trash"></i></a>
                                             </td>
-                                            <td scope="col" nowrap><?= $d->nip;?></td>
+                                            <!-- <td scope="col" nowrap><?= $d->nip;?></td> -->
                                             <td scope="col" nowrap><?= $d->nama;?></td>
                                             <td scope="col" nowrap><?= $d->jabatan;?> <?= $d->adaakses;?></td>
                                         </tr>

@@ -185,7 +185,8 @@ class Permintaan extends CI_Controller {
             // penera
             if($subrecord['kdpegawai'] != ""){
             $cekpeneratetapan = $this->mod_permintaan->cekpeneratetapan($subrecord['kdpegawai']);
-                $subrecord['namapenera'] = empty($cekpeneratetapan) ? "-":$cekpeneratetapan['nip']." - ".$cekpeneratetapan['nama'];
+                // $subrecord['namapenera'] = empty($cekpeneratetapan) ? "-":$cekpeneratetapan['nip']." - ".$cekpeneratetapan['nama'];
+                $subrecord['namapenera'] = empty($cekpeneratetapan) ? "-":$cekpeneratetapan['nama'];
             } else {
                 $subrecord['namapenera'] = "-";
             }
@@ -593,22 +594,26 @@ class Permintaan extends CI_Controller {
                 $data['tgl1'] = $ambilpilihan['tgl1']; 
 
                 $cekpenera = $this->mod_permintaan->cekpeneratetapan($ambilpilihan['pegawai1']);
-                $data['pegawai1'] = empty($cekpenera) ? "":" (".$cekpenera['nip']." - ".$cekpenera['nama'].")";
+                // $data['pegawai1'] = empty($cekpenera) ? "":" (".$cekpenera['nip']." - ".$cekpenera['nama'].")";
+                $data['pegawai1'] = empty($cekpenera) ? "":$cekpenera['nama'];
 
                 $data['tgl2'] = $ambilpilihan['tgl2']; 
 
                 $cekpenera = $this->mod_permintaan->cekpeneratetapan($ambilpilihan['pegawai2']);
-                $data['pegawai2'] = empty($cekpenera) ? "":" (".$cekpenera['nip']." - ".$cekpenera['nama'].")";
+                // $data['pegawai2'] = empty($cekpenera) ? "":" (".$cekpenera['nip']." - ".$cekpenera['nama'].")";
+                $data['pegawai2'] = empty($cekpenera) ? "":$cekpenera['nama'];
                 
                 $data['tgl3'] = $ambilpilihan['tgl3']; 
 
                 $cekpenera = $this->mod_permintaan->cekpeneratetapan($ambilpilihan['pegawai3']);
-                $data['pegawai3'] = empty($cekpenera) ? "":" (".$cekpenera['nip']." - ".$cekpenera['nama'].")";
+                // $data['pegawai3'] = empty($cekpenera) ? "":" (".$cekpenera['nip']." - ".$cekpenera['nama'].")";
+                $data['pegawai3'] = empty($cekpenera) ? "":$cekpenera['nama'];
 
                 $data['tgl4'] = $ambilpilihan['tgl4']; 
 
                 $cekpenera = $this->mod_permintaan->cekpeneratetapan($ambilpilihan['pegawai4']);
-                $data['pegawai4'] = empty($cekpenera) ? "":" (".$cekpenera['nip']." - ".$cekpenera['nama'].")";
+                // $data['pegawai4'] = empty($cekpenera) ? "":" (".$cekpenera['nip']." - ".$cekpenera['nama'].")";
+                $data['pegawai4'] = empty($cekpenera) ? "":$cekpenera['nama'];
 
                 $data['status_tgl1'] = $data['jadwal2'] != $ambilpilihan['tgl1'] && strtotime($data['tglsekarang']) >= strtotime($ambilpilihan['tgl1']) ? "disabled" : "";
                 $data['status_tgl2'] = $data['jadwal2'] != $ambilpilihan['tgl2'] &&strtotime($data['tglsekarang']) >= strtotime($ambilpilihan['tgl2']) ? "disabled" : "";
@@ -618,7 +623,8 @@ class Permintaan extends CI_Controller {
 
             // penera
             $cekpeneratetapan = $this->mod_permintaan->cekpeneratetapan($data['kdpegawai']);
-            $data['namapenera'] = empty($cekpeneratetapan) ? "-":$cekpeneratetapan['nip']." - ".$cekpeneratetapan['nama'];
+            // $data['namapenera'] = empty($cekpeneratetapan) ? "-":$cekpeneratetapan['nip']." - ".$cekpeneratetapan['nama'];
+            $data['namapenera'] = empty($cekpeneratetapan) ? "-":$cekpeneratetapan['nama'];
 
             /* berkas tambahan */
             $no = 1;
@@ -1518,7 +1524,8 @@ class Permintaan extends CI_Controller {
 
         // penera
         $cekpeneratetapan = $this->mod_permintaan->cekpeneratetapan($data['kdpegawai']);
-        $data['namapenera'] = empty($cekpeneratetapan) ? "-":$cekpeneratetapan['nip']." - ".$cekpeneratetapan['nama'];
+        // $data['namapenera'] = empty($cekpeneratetapan) ? "-":$cekpeneratetapan['nip']." - ".$cekpeneratetapan['nama'];
+        $data['namapenera'] = empty($cekpeneratetapan) ? "-":$cekpeneratetapan['nama'];
 
         //save log
         $this->log_lib->log_info("Akses halaman formulir serah terima");

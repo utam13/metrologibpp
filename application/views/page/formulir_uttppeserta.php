@@ -23,7 +23,7 @@
                                     <input type="text" class="sr-only" id="kode" name="kode" value="<?= $kduttppeserta;?>" />
                                     <input type="text" class="sr-only" id="kontrol" value="" />
                                     <input type="text" class="sr-only" id="namafile" name="namafile" value="<?= $foto;?>" />
-                                    <input type="file" class="sr-only" id="pilih-berkas" value="" accept=".jpg,.jpeg,,.png,.gif,.bmp" />
+                                    <input type="file" class="sr-only" id="pilih-berkas" value="" accept=".jpg,.jpeg,.png,.gif,.bmp" />
                                     <input type="text" class="sr-only" id="jmlpengajuan" name="jmlpengajuan" value="<?= $jmlpengajuan;?>" />
                                     <div class="box-body">
                                         <div class="row">

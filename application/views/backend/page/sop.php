@@ -71,7 +71,7 @@
                                             <tr>
                                                 <td class="text-center"><?= $h->no; ?></td>
                                                 <td class="text-center" nowrap>
-                                                    <a href="<?= base_url();?>sop/viewPdf/<?= $h->berkas; ?>" target="_blank" class="btn bg-maroon btn-xs"><i class="fa fa-file-pdf-o"></i></a>
+                                                    <a href="<?= $h->file_berkas; ?>" target="_blank" class="btn bg-maroon btn-xs"><i class="fa fa-file-pdf-o"></i></a>
                                                     <a href="<?= base_url();?>sop/formulir/2/<?= $h->kdsop; ?>" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
                                                     <a href="<?= base_url(); ?>sop/proses/3/<?= $h->kdsop; ?>" class="btn btn-danger btn-xs" onclick="return confirm('Menghapus sop <?= $h->nama; ?> ?')"><i class="fa fa-trash"></i></a>
                                                 </td>

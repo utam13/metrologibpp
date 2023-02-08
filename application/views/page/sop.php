@@ -29,7 +29,7 @@
 							<?
 							foreach ($sop as $s) {
 								echo '<li>'.
-										'<i class="fa fa-check"></i><p style="margin: -22px 0 0 20px">'.$s->nama.' <a href="'.base_url().'info/viewPdf/sop/'.$s->berkas.'" target="_blank" class="btn btn-info btn-xs">Lihat</a></p>'. 
+										'<i class="fa fa-check"></i><p style="margin: -22px 0 0 20px">'.$s->nama.' <a href="'.base_url().'upload/sop/'.$s->berkas.'" target="_blank" class="btn btn-info btn-xs">Lihat</a></p>'. 
 									'</li>';
 							}
 							?>

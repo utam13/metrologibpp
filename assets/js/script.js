@@ -1,7 +1,37 @@
-const serverloc = "https://"+window.location.hostname;
+const serverloc = "http://"+window.location.hostname+":8080/metrologibpp";
 
 jQuery.ajaxSetup({
     cache: false
+});
+
+function fnBrowserDetect(){
+	let userAgent = navigator.userAgent;
+	let browserName;
+	
+	if(userAgent.match(/chrome|chromium|crios/i)){
+		browserName = "chrome";
+	}else if(userAgent.match(/firefox|fxios/i)){
+		browserName = "firefox";
+	}  else if(userAgent.match(/safari/i)){
+		browserName = "safari";
+	}else if(userAgent.match(/opr\//i)){
+		browserName = "opera";
+	} else if(userAgent.match(/edg/i)){
+		browserName = "edge";
+	}else{
+		browserName="No browser detection";
+	}
+	
+	return browserName;        
+}
+
+$(document).ready(function() {
+	let cekbrowser = fnBrowserDetect();
+
+	if (cekbrowser == 'firefox') {
+		alert('Komponen web ini tidak di support oleh browser Firefox');
+		window.open(serverloc + '/pelayanan/logout','_self');
+	}
 });
 
 //tampilkan loading indikator

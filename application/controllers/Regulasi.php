@@ -75,12 +75,12 @@ class Regulasi extends CI_Controller {
             if ($subrecord['berkas'] != "") {
                 $berkas = "upload/regulasi/" . $subrecord['berkas'];
                 if (file_exists($berkas)) {
-                    $data['file_berkas'] = base_url() . "upload/regulasi/" . $subrecord['berkas'] . "?" . rand();
+                    $subrecord['file_berkas'] = base_url() . "upload/regulasi/" . $subrecord['berkas'] . "?" . rand();
                 } else {
-                    $data['file_berkas'] = "";
+                    $subrecord['file_berkas'] = "";
                 }
             } else {
-                $data['file_berkas'] = "";
+                $subrecord['file_berkas'] = "";
             }
 
             $no++;
@@ -133,7 +133,7 @@ class Regulasi extends CI_Controller {
             if ($ambil['berkas'] != "") {
                 $berkas = "upload/regulasi/" . $ambil['berkas'];
                 if (file_exists($berkas)) {
-                    $data['file_berkas'] = base_url() . "regulasi/viewPdf/" . $ambil['berkas'] . "?" . rand();
+                    $data['file_berkas'] = base_url() . "upload/regulasi/" . $ambil['berkas'] . "?" . rand();
                 } else {
                     $data['file_berkas'] = "";
                 }
@@ -233,7 +233,7 @@ class Regulasi extends CI_Controller {
     public function upload($namaberkas)
     {
         $config['upload_path']        = './upload/regulasi';
-        $config['allowed_types']     = 'pdf';
+        $config['allowed_types']     = 'jpg|jpeg|png|pdf';
         $config['file_name']        = $namaberkas;
         $config['overwrite']        = true;
 

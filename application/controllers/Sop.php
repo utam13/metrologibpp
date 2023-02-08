@@ -66,12 +66,12 @@ class Sop extends CI_Controller {
             if ($subrecord['berkas'] != "") {
                 $berkas = "upload/sop/" . $subrecord['berkas'];
                 if (file_exists($berkas)) {
-                    $data['file_berkas'] = base_url() . "upload/sop/" . $subrecord['berkas'] . "?" . rand();
+                    $subrecord['file_berkas'] = base_url() . "upload/sop/" . $subrecord['berkas'] . "?" . rand();
                 } else {
-                    $data['file_berkas'] = "";
+                    $subrecord['file_berkas'] = "";
                 }
             } else {
-                $data['file_berkas'] = "";
+                $subrecord['file_berkas'] = "";
             }
 
             $no++;
@@ -120,7 +120,7 @@ class Sop extends CI_Controller {
             if ($ambil['berkas'] != "") {
                 $berkas = "upload/sop/" . $ambil['berkas'];
                 if (file_exists($berkas)) {
-                    $data['file_berkas'] = base_url() . "sop/viewPdf/" . $ambil['berkas'] . "?" . rand();
+                    $data['file_berkas'] = base_url() . "upload/sop/" . $ambil['berkas'] . "?" . rand();
                 } else {
                     $data['file_berkas'] = "";
                 }
@@ -211,7 +211,7 @@ class Sop extends CI_Controller {
     public function upload($namaberkas)
     {
         $config['upload_path']        = './upload/sop';
-        $config['allowed_types']     = 'pdf';
+        $config['allowed_types']     = 'jpg|jpeg|png|pdf';
         $config['file_name']        = $namaberkas;
         $config['overwrite']        = true;
 

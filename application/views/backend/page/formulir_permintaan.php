@@ -31,9 +31,9 @@
                         <input type="text" class="sr-only" id="namalayanan" name="namalayanan" value="<?= $nama;?>" />
                         <input type="text" class="sr-only" id="noskhp" name="noskhp" value="<?= $noskhp;?>" />
                         <input type="text" class="sr-only" id="kontrol" value="" />
-                        <input type="file" class="sr-only" id="pilih-berkas" value="" accept=".jpg,.jpeg,,.png,.gif,.bmp,.pdf" />
+                        <input type="file" class="sr-only" id="pilih-berkas" value="" accept=".jpg,.jpeg,.png,.gif,.bmp,.pdf" />
                         <input type="text" class="sr-only" id="tambahanke" value="" />
-                        <input type="file" class="sr-only" id="pilih-tambahan" value="" accept=".jpg,.jpeg,,.png,.gif,.bmp,.pdf" />
+                        <input type="file" class="sr-only" id="pilih-tambahan" value="" accept=".jpg,.jpeg,.png,.gif,.bmp,.pdf" />
                         <input type="text" class="sr-only" id="hasilawal" name="hasilawal" value="<?= $hasiluji;?>" />
                         <input type="text" class="sr-only" id="jadwalawal" name="jadwalawal" value="<?= $jadwal2;?>" />
                         <input type="text" class="sr-only" id="pegawaiawal" name="pegawaiawal" value="<?= $kdpegawai;?>" />
@@ -116,7 +116,8 @@
                                                                     <option value="">Pilih Penera</option>
                                                                     <?foreach ($penera as $p) {
                                                                         $pilih = $kdpegawai == $p->kdpegawai ? "selected":"";
-                                                                        echo "<option value='".$p->kdpegawai."' $pilih>".$p->nip." - ".$p->nama."</option>";
+                                                                        // echo "<option value='".$p->kdpegawai."' $pilih>".$p->nip." - ".$p->nama."</option>";
+                                                                        echo "<option value='".$p->kdpegawai."' $pilih>".$p->nama."</option>";
                                                                     }?>
                                                                 </select>
                                                             </dd>
@@ -130,7 +131,8 @@
                                                                     <option value="">Pilih Penera</option>
                                                                     <?foreach ($penera as $p) {
                                                                         $pilih = $kdpegawai == $p->kdpegawai ? "selected":"";
-                                                                        echo "<option value='".$p->kdpegawai."' $pilih>".$p->nip." - ".$p->nama."</option>";
+                                                                        // echo "<option value='".$p->kdpegawai."' $pilih>".$p->nip." - ".$p->nama."</option>";
+                                                                        echo "<option value='".$p->kdpegawai."' $pilih>".$p->nama."</option>";
                                                                     }?>
                                                                 </select>
                                                             </dd>
@@ -478,7 +480,7 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="col-md-5">
+                                        <div class="col-md-5 sr-only">
                                             <div class="form-group">
                                                 <label>Cerapan</label>
                                                 <div class="input-group">

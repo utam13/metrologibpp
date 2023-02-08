@@ -35,7 +35,7 @@
                         <input type="hidden" id="emailpic_awal" name="emailpic_awal" value="<?= $emailpic; ?>">
                         <input type="hidden" id="status" name="status" value="<?= $status; ?>">
                         <!-- <input type="text" class="sr-only" id="kontrol" value="" />
-                        <input type="file" class="sr-only" id="pilih-berkas" value="" accept=".pdf" /> -->
+                        <input type="file" class="sr-only" id="pilih-berkas" value="" accept=".jpg,.jpeg,.png,.pdf" /> -->
                         <div class="box-body">
                             <fieldset class="col-md-12">
                                 <legend>Informasi Usaha</legend>

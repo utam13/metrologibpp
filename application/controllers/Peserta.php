@@ -519,7 +519,7 @@ class Peserta extends CI_Controller {
     public function upload($namaberkas)
     {
         $config['upload_path']        = './upload/pelayanan';
-        $config['allowed_types']     = 'pdf';
+        $config['allowed_types']     = 'jpg|jpeg|png|pdf';
         $config['file_name']        = $namaberkas;
         $config['overwrite']        = true;
 
